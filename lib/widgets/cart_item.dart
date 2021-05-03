@@ -38,6 +38,31 @@ class CartItem extends StatelessWidget {
       ),
       direction: DismissDirection
           .endToStart, // This will only allowed the swipe from right to left
+      confirmDismiss: (direction) {
+        return showDialog(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text('Are you sure?'),
+            content: Text(
+              'Do you want to remove this item from the cart?',
+            ),
+            actions: <Widget>[
+              TextButton(
+                child: Text('No'),
+                onPressed: () {
+                  Navigator.of(ctx).pop(false);
+                },
+              ),
+              TextButton(
+                child: Text('Yes'),
+                onPressed: () {
+                  Navigator.of(ctx).pop(true);
+                },
+              ),
+            ],
+          ),
+        );
+      },
       onDismissed: (direction) {
         Provider.of<CartProvider>(context, listen: false).removeItem(productId);
       },

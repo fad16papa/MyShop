@@ -7,6 +7,7 @@ import 'package:shop_app/screens/cart_screen.dart';
 import 'package:shop_app/screens/order_screen.dart';
 import 'package:shop_app/screens/product_detail_screen.dart';
 import 'package:shop_app/screens/product_overview_screen.dart';
+import 'package:shop_app/screens/user_product_screen.dart';
 
 void main() {
   runApp(MyHomePage());
@@ -41,6 +42,7 @@ class MyHomePage extends StatelessWidget {
           ProdcutDetailScreen.routeName: (ctx) => ProdcutDetailScreen(),
           CartScreen.rounteName: (ctx) => CartScreen(),
           OrdersScreen.routeName: (ctx) => OrdersScreen(),
+          UserProductsScreen.routeName: (ctx) => UserProductsScreen(),
         },
       ),
     );
