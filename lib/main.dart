@@ -38,10 +38,10 @@ class MyHomePage extends StatelessWidget {
           accentColor: Colors.deepOrange,
           fontFamily: 'Lato',
         ),
-        home: ProductOverviewScreen(),
+        home: ProductsOverviewScreen(),
         routes: {
-          ProdcutDetailScreen.routeName: (ctx) => ProdcutDetailScreen(),
-          CartScreen.rounteName: (ctx) => CartScreen(),
+          ProductDetailScreen.routeName: (ctx) => ProductDetailScreen(),
+          CartScreen.routeName: (ctx) => CartScreen(),
           OrdersScreen.routeName: (ctx) => OrdersScreen(),
           UserProductsScreen.routeName: (ctx) => UserProductsScreen(),
           EditProductsScreen.routeName: (ctx) => EditProductsScreen(),

@@ -20,7 +20,6 @@ class CartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dismissible(
-      // This is for sliding animation when removing and item in cart
       key: ValueKey(id),
       background: Container(
         color: Theme.of(context).errorColor,
@@ -36,24 +35,23 @@ class CartItem extends StatelessWidget {
           vertical: 4,
         ),
       ),
-      direction: DismissDirection
-          .endToStart, // This will only allowed the swipe from right to left
+      direction: DismissDirection.endToStart,
       confirmDismiss: (direction) {
         return showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
             title: Text('Are you sure?'),
             content: Text(
-              'Do you want to remove this item from the cart?',
+              'Do you want to remove the item from the cart?',
             ),
             actions: <Widget>[
-              TextButton(
+              FlatButton(
                 child: Text('No'),
                 onPressed: () {
                   Navigator.of(ctx).pop(false);
                 },
               ),
-              TextButton(
+              FlatButton(
                 child: Text('Yes'),
                 onPressed: () {
                   Navigator.of(ctx).pop(true);
@@ -78,14 +76,12 @@ class CartItem extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.all(5),
                 child: FittedBox(
-                  child: Text(
-                    '\$$price',
-                  ),
+                  child: Text('\$$price'),
                 ),
               ),
             ),
             title: Text(title),
-            subtitle: Text('Total: \$${price * quantity}'),
+            subtitle: Text('Total: \$${(price * quantity)}'),
             trailing: Text('$quantity x'),
           ),
         ),

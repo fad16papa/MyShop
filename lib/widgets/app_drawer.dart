@@ -17,8 +17,7 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.shop),
             title: Text('Shop'),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed(
-                  '/'); // This will return to the home route page
+              Navigator.of(context).pushReplacementNamed('/');
             },
           ),
           Divider(),
@@ -26,8 +25,8 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.payment),
             title: Text('Orders'),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed(OrdersScreen
-                  .routeName); // This will lead to OrderScreen Route
+              Navigator.of(context)
+                  .pushReplacementNamed(OrdersScreen.routeName);
             },
           ),
           Divider(),
@@ -35,8 +34,8 @@ class AppDrawer extends StatelessWidget {
             leading: Icon(Icons.edit),
             title: Text('Manage Products'),
             onTap: () {
-              Navigator.of(context).pushReplacementNamed(UserProductsScreen
-                  .routeName); // This will lead to UserProductsScreen Route
+              Navigator.of(context)
+                  .pushReplacementNamed(UserProductsScreen.routeName);
             },
           ),
         ],
