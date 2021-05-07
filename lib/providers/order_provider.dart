@@ -13,7 +13,8 @@ class OrderProvider with ChangeNotifier {
   }
 
   Future<void> fetchAndSetOrders() async {
-    Uri url = Uri.parse('https://flutter-update.firebaseio.com/orders.json');
+    Uri url = Uri.parse(
+        'https://flutter-sample-api-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json');
     final response = await http.get(url);
     final List<OrderItem> loadedOrders = [];
     final extractedData = json.decode(response.body) as Map<String, dynamic>;
@@ -44,7 +45,8 @@ class OrderProvider with ChangeNotifier {
   }
 
   Future<void> addOrder(List<CartItem> cartProducts, double total) async {
-    Uri url = Uri.parse('https://flutter-update.firebaseio.com/orders.json');
+    Uri url = Uri.parse(
+        'https://flutter-sample-api-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json');
     final timestamp = DateTime.now();
     final response = await http.post(
       url,
