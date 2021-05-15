@@ -43,6 +43,10 @@ class ProductsProvider with ChangeNotifier {
 
   var _showFavoriteOnly = false;
 
+  final String authToken;
+
+  ProductsProvider(this.authToken, this._items);
+
   List<Product> get items {
     if (_showFavoriteOnly) {
       return _items.where((productItem) => productItem.isFavorite).toList();
@@ -70,7 +74,7 @@ class ProductsProvider with ChangeNotifier {
 
   Future<void> fetchAndSetProducts() async {
     Uri url = Uri.parse(
-        'https://flutter-sample-api-default-rtdb.asia-southeast1.firebasedatabase.app/products.json');
+        'https://flutter-sample-api-default-rtdb.asia-southeast1.firebasedatabase.app/products.json?auth=$authToken');
 
     try {
       final response = await http.get(url);

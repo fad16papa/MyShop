@@ -23,7 +23,7 @@ class AuthProvider with ChangeNotifier {
     return null;
   }
 
-  Future<Void> singUp(String email, String password) async {
+  Future<void> singUp(String email, String password) async {
     Uri url = Uri.parse(
         'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAelLA-DSY-q1SudpT0qfSWVZY1TQ3bJUM');
 

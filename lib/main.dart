@@ -26,9 +26,10 @@ class MyHomePage extends StatelessWidget {
           create: (ctx) => AuthProvider(),
         ),
         //This will handle multiple providers
-        ChangeNotifierProvider(
-          create: (ctx) => ProductsProvider(),
-        ),
+        // ChangeNotifierProxyProvider<AuthProvider, ProductsProvider>(
+        //   builder: (ctx, auth, previousProducts) =>
+        //       ProductsProvider(auth.token, previousProducts._item),
+        // ),
         ChangeNotifierProvider(
           create: (ctx) => CartProvider(),
         ),
